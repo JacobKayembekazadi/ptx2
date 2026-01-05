@@ -1,0 +1,7 @@
+{
+  "name": "PTX Metals Corporate Explorer",
+  "description": "A high-performance corporate portal for PTX Metals, featuring real-time stock data, detailed project insights for W2 and South Timmins, and a Gemini-powered AI advisor for investor relations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
