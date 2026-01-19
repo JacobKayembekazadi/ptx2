@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
         <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Copyright */}
           <div className="text-xs text-gray-500">
-            &copy; 2026 Copyright PTX Metals Inc. <span className="mx-2">|</span> Website by <a href="https://adnetinc.com/" target="_blank" className="hover:text-white transition-colors">Adnet</a>.
+            &copy; 2026 Copyright PTX Metals Inc.
           </div>
 
           {/* Social Icons */}
