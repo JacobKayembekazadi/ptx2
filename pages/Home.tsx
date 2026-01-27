@@ -124,7 +124,94 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* MIND-BLOWING SECTION 1: THE COMMODITY MATRIX */}
+      {/* ESG & COMMUNITY IMPACT */}
+      <section className="py-40 bg-white text-black reveal-up">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            <div>
+              <div className="flex items-center space-x-4 mb-8">
+                <span className="h-1 w-12 bg-brand-orange"></span>
+                <span className="text-brand-orange font-black uppercase text-xs tracking-widest">Responsible Stewardship</span>
+              </div>
+              <h2 className="text-6xl font-black uppercase tracking-tighter leading-none mb-10">Mining With <br/> <span className="text-brand-orange">Integrity.</span></h2>
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-gray-50 rounded-xl">
+                    <Users className="text-brand-orange" size={28} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold uppercase tracking-tight text-lg">First Nations Partnership</h4>
+                    <p className="text-gray-500 mt-1">Deep collaboration with Webequie First Nation (WFN) for support services and shared prosperity.</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-6">
+                  <div className="p-4 bg-gray-50 rounded-xl">
+                    <Leaf className="text-brand-orange" size={28} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold uppercase tracking-tight text-lg">Environmental Oversight</h4>
+                    <p className="text-gray-500 mt-1">LIDAR orthophoto surveys and paragenesis studies to minimize footprint and maximize data efficiency.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-gray-100 rounded-2xl p-12 flex flex-col justify-between overflow-hidden relative">
+              <div className="absolute top-0 right-0 p-8">
+                <ShieldCheck size={120} className="text-brand-orange opacity-10" />
+              </div>
+              <div className="relative z-10">
+                <p className="text-3xl font-light italic text-gray-700 leading-relaxed">
+                  "Our goal is not just to discover minerals, but to build a legacy of responsible development that benefits all stakeholders in Northern Ontario."
+                </p>
+                <div className="mt-8">
+                  <span className="font-black uppercase tracking-widest text-sm">Greg Ferron</span>
+                  <span className="block text-gray-400 text-xs font-bold uppercase tracking-widest">CEO, PTX Metals</span>
+                </div>
+              </div>
+              <button className="mt-12 bg-brand-dark text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-orange transition-all w-fit">
+                View ESG Policy
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE INVESTMENT THESIS (REVEAL) */}
+      <section className="py-60 bg-white text-black relative reveal-up overflow-hidden">
+        <div className="container mx-auto px-6 text-center">
+          <div className="inline-flex items-center space-x-2 text-brand-orange mb-12">
+            <Layers size={24} />
+            <span className="font-black uppercase text-sm tracking-[0.4em]">The PTX Edge</span>
+          </div>
+          <h2 className="text-[12vw] font-black uppercase tracking-tighter leading-[0.75] mb-20 text-black/5 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">ASSEMBLING VALUE</h2>
+          <div className="max-w-5xl mx-auto relative z-10">
+            <p className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-12">
+              Major scale potential. <br/>
+              <span className="text-brand-orange">Tier 1 jurisdictions.</span> <br/>
+              Expert capital allocation.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 border-t border-black/10 pt-16">
+              <div className="space-y-4">
+                <Target size={32} className="mx-auto text-brand-orange" />
+                <h4 className="text-xl font-black uppercase">Massive Upside</h4>
+                <p className="text-gray-500 text-sm font-light">Targeting district-scale anomalies in the world-class Ring of Fire region.</p>
+              </div>
+              <div className="space-y-4">
+                <ShieldCheck size={32} className="mx-auto text-brand-orange" />
+                <h4 className="text-xl font-black uppercase">Low Risk</h4>
+                <p className="text-gray-500 text-sm font-light">Operating in Ontario, one of the safest and most prolific mining jurisdictions globally.</p>
+              </div>
+              <div className="space-y-4">
+                <Database size={32} className="mx-auto text-brand-orange" />
+                <h4 className="text-xl font-black uppercase">Data Driven</h4>
+                <p className="text-gray-500 text-sm font-light">Every drill hole is backed by modern high-resolution geophysics and LIDAR mapping.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* THE COMMODITY MATRIX */}
       <section className="py-40 bg-black relative overflow-hidden reveal-up">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-start mb-20 gap-8">
@@ -267,94 +354,7 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* ESG & COMMUNITY IMPACT */}
-      <section className="py-40 bg-white text-black reveal-up">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <div>
-              <div className="flex items-center space-x-4 mb-8">
-                <span className="h-1 w-12 bg-brand-orange"></span>
-                <span className="text-brand-orange font-black uppercase text-xs tracking-widest">Responsible Stewardship</span>
-              </div>
-              <h2 className="text-6xl font-black uppercase tracking-tighter leading-none mb-10">Mining With <br/> <span className="text-brand-orange">Integrity.</span></h2>
-              <div className="space-y-8">
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-gray-50 rounded-xl">
-                    <Users className="text-brand-orange" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold uppercase tracking-tight text-lg">First Nations Partnership</h4>
-                    <p className="text-gray-500 mt-1">Deep collaboration with Webequie First Nation (WFN) for support services and shared prosperity.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-6">
-                  <div className="p-4 bg-gray-50 rounded-xl">
-                    <Leaf className="text-brand-orange" size={28} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold uppercase tracking-tight text-lg">Environmental Oversight</h4>
-                    <p className="text-gray-500 mt-1">LIDAR orthophoto surveys and paragenesis studies to minimize footprint and maximize data efficiency.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="bg-gray-100 rounded-2xl p-12 flex flex-col justify-between overflow-hidden relative">
-              <div className="absolute top-0 right-0 p-8">
-                <ShieldCheck size={120} className="text-brand-orange opacity-10" />
-              </div>
-              <div className="relative z-10">
-                <p className="text-3xl font-light italic text-gray-700 leading-relaxed">
-                  "Our goal is not just to discover minerals, but to build a legacy of responsible development that benefits all stakeholders in Northern Ontario."
-                </p>
-                <div className="mt-8">
-                  <span className="font-black uppercase tracking-widest text-sm">Greg Ferron</span>
-                  <span className="block text-gray-400 text-xs font-bold uppercase tracking-widest">CEO, PTX Metals</span>
-                </div>
-              </div>
-              <button className="mt-12 bg-brand-dark text-white px-8 py-4 font-bold uppercase tracking-widest hover:bg-brand-orange transition-all w-fit">
-                View ESG Policy
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* THE INVESTMENT THESIS (REVEAL) */}
-      <section className="py-60 bg-white text-black relative reveal-up overflow-hidden">
-        <div className="container mx-auto px-6 text-center">
-          <div className="inline-flex items-center space-x-2 text-brand-orange mb-12">
-            <Layers size={24} />
-            <span className="font-black uppercase text-sm tracking-[0.4em]">The PTX Edge</span>
-          </div>
-          <h2 className="text-[12vw] font-black uppercase tracking-tighter leading-[0.75] mb-20 text-black/5 select-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">ASSEMBLING VALUE</h2>
-          <div className="max-w-5xl mx-auto relative z-10">
-            <p className="text-4xl md:text-6xl font-black uppercase tracking-tighter leading-none mb-12">
-              Major scale potential. <br/>
-              <span className="text-brand-orange">Tier 1 jurisdictions.</span> <br/>
-              Expert capital allocation.
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mt-20 border-t border-black/10 pt-16">
-              <div className="space-y-4">
-                <Target size={32} className="mx-auto text-brand-orange" />
-                <h4 className="text-xl font-black uppercase">Massive Upside</h4>
-                <p className="text-gray-500 text-sm font-light">Targeting district-scale anomalies in the world-class Ring of Fire region.</p>
-              </div>
-              <div className="space-y-4">
-                <ShieldCheck size={32} className="mx-auto text-brand-orange" />
-                <h4 className="text-xl font-black uppercase">Low Risk</h4>
-                <p className="text-gray-500 text-sm font-light">Operating in Ontario, one of the safest and most prolific mining jurisdictions globally.</p>
-              </div>
-              <div className="space-y-4">
-                <Database size={32} className="mx-auto text-brand-orange" />
-                <h4 className="text-xl font-black uppercase">Data Driven</h4>
-                <p className="text-gray-500 text-sm font-light">Every drill hole is backed by modern high-resolution geophysics and LIDAR mapping.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* MIND-BLOWING SECTION 4: MISSION CONTROL (DRILL TRACKER) */}
+      {/* MISSION CONTROL (DRILL TRACKER) */}
       <section className="py-40 bg-black relative overflow-hidden reveal-up">
         <div className="container mx-auto px-6">
           <div className="glass p-12 rounded-3xl border border-white/5 relative">
