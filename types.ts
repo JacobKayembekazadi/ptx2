@@ -36,3 +36,27 @@ export interface ChatMessage {
   role: 'user' | 'assistant';
   content: string;
 }
+
+// AI Provider Types
+export type AIProvider = 'openai' | 'anthropic' | 'gemini';
+
+export interface AIConfig {
+  provider: AIProvider;
+  apiKey: string;
+  model?: string;
+}
+
+export interface AIProviderConfig {
+  openai?: {
+    apiKey: string;
+    model?: string; // default: gpt-4o
+  };
+  anthropic?: {
+    apiKey: string;
+    model?: string; // default: claude-sonnet-4-20250514
+  };
+  gemini?: {
+    apiKey: string;
+    model?: string; // default: gemini-2.0-flash
+  };
+}
