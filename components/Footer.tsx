@@ -1,30 +1,35 @@
 
 import React from 'react';
-import { useNavigation } from './NavigationContext';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
-  const { navigateTo } = useNavigation();
-
   return (
     <footer className="bg-brand-dark text-gray-300 pt-16 pb-12">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 border-b border-white/10 pb-12">
           {/* Logo and Links */}
           <div className="w-full lg:w-1/2">
-            <button onClick={() => navigateTo('home')} className="mb-8">
+            <Link to="/" className="mb-8 block">
               <svg width="300" height="70" viewBox="0 0 600 136" className="filter invert brightness-0">
                 <image x="6" y="7" width="591" height="124" href="https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2024/04/07152334/ptx-metals.png" />
               </svg>
-            </button>
+            </Link>
             <nav className="flex flex-wrap gap-x-8 gap-y-4">
-              {['Home', 'Corporate', 'Projects', 'Investors', 'News', 'Contact'].map(link => (
-                <button 
-                  key={link} 
-                  onClick={() => navigateTo(link.toLowerCase() as any)} 
+              {[
+                { name: 'Home', path: '/' },
+                { name: 'Corporate', path: '/about-us' },
+                { name: 'Projects', path: '/projects/w2' },
+                { name: 'Investors', path: '/investors' },
+                { name: 'News', path: '/news' },
+                { name: 'Contact', path: '/contact' }
+              ].map(link => (
+                <Link
+                  key={link.name}
+                  to={link.path}
                   className="text-sm font-bold uppercase tracking-widest hover:text-brand-orange transition-colors"
                 >
-                  {link}
-                </button>
+                  {link.name}
+                </Link>
               ))}
             </nav>
           </div>
@@ -60,7 +65,7 @@ const Footer: React.FC = () => {
               </svg>
             </a>
             <a href="https://www.facebook.com/ptxmetals" target="_blank" className="hover:opacity-80 transition-opacity">
-              <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#E56417" d="M20 0a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h16zm-4 7.28V4.5h-2.29c-2.1 0-3.42 1.6-3.42 3.89v1.67H8v2.77h2.29v6.67h2.85v-6.67h2.29l.57-2.77h-2.86V8.94c0-1.1.58-1.66 1.72-1.66H16z"/></svg>
+              <svg width="40" height="40" viewBox="0 0 24 24"><path fill="#E56417" d="M20 0a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V4a4 4 0 0 1 4-4h16zm-4 7.28V4.5h-2.29c-2.1 0-3.42 1.6-3.42 3.89v1.67H8v2.77h2.29v6.67h2.85v-6.67h2.29l.57-2.77h-2.86V8.94c0-1.1.58-1.66 1.72-1.66H16z" /></svg>
             </a>
             <a href="https://www.linkedin.com/company/ptxmetals" target="_blank" className="hover:opacity-80 transition-opacity">
               <svg width="40" height="40" viewBox="0 0 50 50">

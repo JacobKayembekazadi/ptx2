@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    cursor: default;
+    background-color: #050505;
+    color: #ffffff;
+}
+
+/* Custom Utilities that might not be fully covered by Tailwind or need override */
+.bg-gold {
+    background-color: #b49160;
+}
+
+.text-gold {
+    color: #b49160;
+}
+
+/* .bg-brand-orange and .text-brand-orange are now in tailwind config but keeping just largely compatible if mixed */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #e56417;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.orange-glow {
+    box-shadow: 0 0 40px rgba(229, 100, 23, 0.2);
+}
+
+.blueprint-grid {
+    background-image: radial-gradient(rgba(229, 100, 23, 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+/* Modern hover transition */
+.hover-lift {
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.4s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-10px);
+}

@@ -1,8 +1,8 @@
 {
   "name": "ptx-metals-corporate-explorer",
   "private": true,
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,11 +10,16 @@
   },
   "dependencies": {
     "@google/genai": "^1.34.0",
+    "autoprefixer": "^10.4.24",
     "framer-motion": "^12.24.0",
+    "gsap": "^3.14.2",
     "lucide-react": "^0.562.0",
+    "postcss": "^8.5.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "react-intersection-observer": "^10.0.0"
+    "react-intersection-observer": "^10.0.0",
+    "react-router-dom": "^7.13.0",
+    "tailwindcss": "^3.4.19"
   },
   "devDependencies": {
     "@types/node": "^22.14.0",

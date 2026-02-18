@@ -1,13 +1,13 @@
 
 import React from 'react';
 import { Page, TeamMemberProps } from '../types';
-import { useNavigation } from './NavigationContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 
 export const Banner: React.FC<{ title: string; image: string; subtitle?: string }> = ({ title, image, subtitle }) => {
   return (
     <div className="relative h-[400px] w-full flex items-center overflow-hidden">
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${image})` }}
       />
@@ -25,35 +25,36 @@ export const Banner: React.FC<{ title: string; image: string; subtitle?: string 
 };
 
 export const Sidebar: React.FC<{ activeCategory: string }> = ({ activeCategory }) => {
-  const { currentPage, navigateTo } = useNavigation();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const navGroups: Record<string, { label: string; id: Page }[]> = {
+  const navGroups: Record<string, { label: string; path: string }[]> = {
     'Corporate': [
-      { id: 'about-us', label: 'About Us' },
-      { id: 'management', label: 'Management' },
-      { id: 'board', label: 'Board of Directors' },
-      { id: 'advisors', label: 'Technical Advisors' },
+      { path: '/about-us', label: 'About Us' },
+      { path: '/management', label: 'Management' },
+      { path: '/board', label: 'Board of Directors' },
+      { path: '/advisors', label: 'Technical Advisors' },
     ],
     'Projects': [
-      { id: 'projects-w2', label: 'W2 Cu-Ni-PGE' },
-      { id: 'projects-shining', label: 'Shining Tree Gold' },
-      { id: 'projects-heenan', label: 'Heenan Mallard Gold' },
-      { id: 'projects-royalty', label: 'Royalty Portfolio' },
+      { path: '/projects/w2', label: 'W2 Cu-Ni-PGE' },
+      { path: '/projects/shining-tree', label: 'Shining Tree Gold' },
+      { path: '/projects/heenan', label: 'Heenan Mallard Gold' },
+      { path: '/projects/royalty', label: 'Royalty Portfolio' },
     ],
     'Investors': [
-      { id: 'investors', label: 'Stock Information' },
-      { id: 'presentations', label: 'Corporate Presentation' },
-      { id: 'financials', label: 'Financial Statements' },
-      { id: 'notice-access', label: 'Notice and Access' },
-      { id: 'cautionary', label: 'Cautionary Notes' },
+      { path: '/investors', label: 'Stock Information' },
+      { path: '/investors/presentations', label: 'Corporate Presentation' },
+      { path: '/investors/financials', label: 'Financial Statements' },
+      { path: '/investors/notice-access', label: 'Notice and Access' },
+      { path: '/investors/cautionary', label: 'Cautionary Notes' },
     ],
     'News': [
-      { id: 'news', label: 'News Releases' },
-      { id: 'news-article-w2-drill', label: 'W2 Drill Launch' }
+      { path: '/news', label: 'News Releases' },
+      { path: '/news/w2-drill-launch', label: 'W2 Drill Launch' }
     ],
     'Contact': [
-      { id: 'contact', label: 'Contact Us' },
-      { id: 'subscribe', label: 'Subscribe' }
+      { path: '/contact', label: 'Contact Us' },
+      { path: '/subscribe', label: 'Subscribe' }
     ]
   };
 
@@ -66,17 +67,16 @@ export const Sidebar: React.FC<{ activeCategory: string }> = ({ activeCategory }
       </h3>
       <ul className="space-y-2">
         {currentLinks.map((link) => (
-          <li key={link.id}>
+          <li key={link.path}>
             <button
-              onClick={() => navigateTo(link.id)}
-              className={`w-full text-left px-4 py-3 rounded transition-all flex justify-between items-center group ${
-                currentPage === link.id
-                  ? 'bg-brand-orange text-white font-bold shadow-lg transform translate-x-2'
-                  : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
-              }`}
+              onClick={() => navigate(link.path)}
+              className={`w-full text-left px-4 py-3 rounded transition-all flex justify-between items-center group ${location.pathname === link.path
+                ? 'bg-brand-orange text-white font-bold shadow-lg transform translate-x-2'
+                : 'text-gray-600 hover:bg-gray-200 hover:text-gray-900'
+                }`}
             >
               <span>{link.label}</span>
-              <ChevronRight size={16} className={`transition-transform ${currentPage === link.id ? 'translate-x-0' : '-translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`} />
+              <ChevronRight size={16} className={`transition-transform ${location.pathname === link.path ? 'translate-x-0' : '-translate-x-2 opacity-0 group-hover:opacity-100 group-hover:translate-x-0'}`} />
             </button>
           </li>
         ))}
