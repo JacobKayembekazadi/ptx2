@@ -10,8 +10,6 @@ const Investors: React.FC = () => {
         { label: "Options (Avg Strike $0.18)", value: "8,262,500", highlight: false },
         { label: "Warrants", value: "39,298,000", highlight: false },
         { label: "Fully Diluted", value: "218,711,098", highlight: false },
-        { label: "Market Cap", value: "~$20M", highlight: true },
-        { label: "Cash Position", value: "~$6.0M", highlight: true },
     ];
 
     const shareholderData = [
@@ -84,7 +82,7 @@ const Investors: React.FC = () => {
                                     className="group relative bg-brand-orange text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs overflow-hidden transition-all hover:shadow-xl hover:shadow-brand-orange/30 hover:-translate-y-1"
                                 >
                                     <span className="relative z-10 flex items-center gap-2">
-                                        View Presentations <ArrowUpRight size={14} />
+                                        Corporate Presentation <ArrowUpRight size={14} />
                                     </span>
                                     <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform" />
                                 </Link>
@@ -137,8 +135,6 @@ const Investors: React.FC = () => {
                 <div className="container mx-auto px-6">
                     <div className="flex items-center justify-between py-4 overflow-x-auto gap-8">
                         {[
-                            { label: "Market Cap", value: "~$20M", highlight: true },
-                            { label: "Cash", value: "~$6.0M", highlight: true },
                             { label: "Shares Out", value: "171.2M", highlight: false },
                             { label: "Fully Diluted", value: "218.7M", highlight: false },
                         ].map((item, idx) => (
@@ -175,7 +171,7 @@ const Investors: React.FC = () => {
                             </div>
                             <iframe
                                 src="https://feed.adnet.dev/platinexinc/charts-ptx.html"
-                                width="100%" height="480" className="border-0 rounded-xl bg-gray-50 stock-chart" title="Chart"
+                                width="100%" height="320" className="border-0 rounded-xl bg-gray-50 stock-chart md:h-[480px]" title="Chart"
                             />
                         </div>
                         <div className="bg-white p-6 md:p-8 rounded-3xl border border-gray-100 overflow-hidden shadow-lg reveal-up">
@@ -193,7 +189,7 @@ const Investors: React.FC = () => {
                             </div>
                             <iframe
                                 src="https://feed.adnet.dev/platinexinc/quotes-ptx.html"
-                                width="100%" height="400" className="border-0 rounded-xl bg-gray-50 stock-quote" title="Quote"
+                                width="100%" height="300" className="border-0 rounded-xl bg-gray-50 stock-quote md:h-[400px]" title="Quote"
                             />
                         </div>
                     </div>
@@ -246,9 +242,10 @@ const Investors: React.FC = () => {
                     </div>
 
                     {/* Quick Access Cards */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 reveal-up">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 reveal-up">
                         {[
-                            { title: "Presentations", desc: "Investor decks", icon: FileText, path: "/investors/presentations", color: "orange" },
+                            { title: "Presentation", desc: "Corporate deck", icon: FileText, path: "/investors/presentations", color: "orange" },
+                            { title: "Fact Sheet", desc: "Quick overview", icon: Info, path: "/investors/fact-sheet", color: "teal" },
                             { title: "Financials", desc: "SEDAR filings", icon: PieChart, path: "/investors/financials", color: "blue" },
                             { title: "Notice & Access", desc: "Meeting materials", icon: Users, path: "/investors/notice-access", color: "green" },
                             { title: "Cautionary", desc: "Legal disclosures", icon: ShieldAlert, path: "/investors/cautionary", color: "red" },
@@ -258,12 +255,14 @@ const Investors: React.FC = () => {
                                     item.color === 'orange' ? 'bg-brand-orange/10 group-hover:bg-brand-orange' :
                                     item.color === 'blue' ? 'bg-blue-50 group-hover:bg-blue-600' :
                                     item.color === 'green' ? 'bg-green-50 group-hover:bg-green-600' :
+                                    item.color === 'teal' ? 'bg-teal-50 group-hover:bg-teal-600' :
                                     'bg-red-50 group-hover:bg-red-600'
                                 }`}>
                                     <item.icon className={`transition-colors ${
                                         item.color === 'orange' ? 'text-brand-orange group-hover:text-white' :
                                         item.color === 'blue' ? 'text-blue-600 group-hover:text-white' :
                                         item.color === 'green' ? 'text-green-600 group-hover:text-white' :
+                                        item.color === 'teal' ? 'text-teal-600 group-hover:text-white' :
                                         'text-red-600 group-hover:text-white'
                                     }`} size={20} />
                                 </div>
@@ -343,10 +342,10 @@ export const Presentations: React.FC = () => (
                         </span>
                     </div>
                     <h1 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-[0.95] mb-6">
-                        Corporate<br /><span className="text-brand-orange">Presentations</span>
+                        Corporate<br /><span className="text-brand-orange">Presentation</span>
                     </h1>
                     <p className="text-xl text-gray-300 font-light max-w-xl leading-relaxed">
-                        Download our latest investor decks, corporate presentations, and fact sheets.
+                        Download our latest corporate presentation and investor materials.
                     </p>
                 </div>
             </div>
@@ -360,7 +359,7 @@ export const Presentations: React.FC = () => (
             <div className="lg:w-3/4 space-y-12">
                 {/* Featured Presentation */}
                 <div className="reveal-up">
-                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-orange mb-6">Featured</h2>
+                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-orange mb-6">Latest</h2>
                     <div className="group bg-white p-10 rounded-3xl border border-gray-100 hover:border-brand-orange/50 hover:shadow-2xl transition-all relative overflow-hidden">
                         <div className="absolute top-0 right-0 w-64 h-64 bg-brand-orange/5 rounded-full blur-[80px] group-hover:bg-brand-orange/10 transition-all" />
                         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -369,55 +368,146 @@ export const Presentations: React.FC = () => (
                                     <FileText className="text-brand-orange group-hover:text-white transition-colors" size={36} />
                                 </div>
                                 <div>
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-orange mb-2 block">February 2026</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-brand-orange mb-2 block">January 2026</span>
                                     <h3 className="text-2xl font-black uppercase tracking-tight text-gray-900 mb-2">Corporate Presentation</h3>
                                     <p className="text-gray-500 font-light">High-Grade Gold & Critical Minerals Strategy — W2 Project Update</p>
                                 </div>
                             </div>
-                            <button className="flex items-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-brand-orange transition-all shadow-lg group-hover:shadow-xl">
+                            <a
+                                href="https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/18154324/PTX-Metals-Corportate-Presentation-JANUARY-2026-2.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-brand-orange transition-all shadow-lg group-hover:shadow-xl"
+                            >
                                 <Download size={18} /> Download PDF
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                {/* Other Documents */}
+                {/* PDF Embed */}
                 <div className="reveal-up">
-                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-6">Additional Resources</h2>
-                    <div className="space-y-4">
-                        {[
-                            { title: "Company Fact Sheet — Q1 2026", desc: "Quick Overview & Key Metrics", color: "blue" },
-                            { title: "Investor One-Pager", desc: "Executive Summary for Institutional Investors", color: "green" },
-                            { title: "Technical Presentation — W2 Gold Project", desc: "Geology, Drill Results & Resource Estimates", color: "purple" },
-                        ].map((doc, idx) => (
-                            <div key={idx} className="group bg-white p-6 rounded-2xl border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all flex items-center justify-between">
-                                <div className="flex items-center gap-5">
-                                    <div className={`p-4 rounded-xl ${doc.color === 'blue' ? 'bg-blue-50 group-hover:bg-blue-600' : doc.color === 'green' ? 'bg-green-50 group-hover:bg-green-600' : 'bg-purple-50 group-hover:bg-purple-600'} transition-all`}>
-                                        <FileText className={`${doc.color === 'blue' ? 'text-blue-600' : doc.color === 'green' ? 'text-green-600' : 'text-purple-600'} group-hover:text-white transition-colors`} size={24} />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-black uppercase tracking-tight text-gray-900 mb-1">{doc.title}</h4>
-                                        <p className="text-gray-400 text-sm">{doc.desc}</p>
-                                    </div>
+                    <div className="bg-white p-6 rounded-3xl border border-gray-100 shadow-lg overflow-hidden">
+                        <iframe
+                            src="https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/18154324/PTX-Metals-Corportate-Presentation-JANUARY-2026-2.pdf"
+                            width="100%"
+                            height="400"
+                            className="border-0 rounded-xl md:h-[600px]"
+                            title="PTX Metals Corporate Presentation — February 2026"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="lg:w-1/4">
+                <Sidebar activeCategory="Investors" />
+            </div>
+        </div>
+    </div>
+);
+
+export const FactSheet: React.FC = () => (
+    <div className="bg-gray-50 min-h-screen">
+        {/* Hero Section */}
+        <div className="relative min-h-[50vh] flex items-center bg-brand-dark overflow-hidden">
+            <div className="absolute inset-0 opacity-10">
+                <div className="absolute inset-0" style={{
+                    backgroundImage: 'linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px)',
+                    backgroundSize: '60px 60px'
+                }} />
+            </div>
+
+            <div className="absolute top-10 right-20 w-[400px] h-[400px] bg-teal-500/20 rounded-full blur-[120px]" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-orange/10 rounded-full blur-[100px]" />
+
+            <div className="container relative mx-auto px-6 z-10 py-20">
+                <div className="max-w-3xl">
+                    <Link to="/investors" className="inline-flex items-center gap-2 text-gray-400 hover:text-white text-xs font-bold uppercase tracking-widest mb-8 transition-colors">
+                        <ChevronRight size={14} className="rotate-180" /> Back to Investors
+                    </Link>
+                    <div className="flex items-center gap-4 mb-6">
+                        <span className="inline-flex items-center gap-2 bg-teal-600 text-white text-[10px] font-black uppercase tracking-[0.25em] px-4 py-2 rounded-full">
+                            <Info size={12} /> Overview
+                        </span>
+                    </div>
+                    <h1 className="text-5xl md:text-6xl font-black text-white uppercase tracking-tight leading-[0.95] mb-6">
+                        Fact<br /><span className="text-teal-400">Sheet</span>
+                    </h1>
+                    <p className="text-xl text-gray-300 font-light max-w-xl leading-relaxed">
+                        A quick snapshot of PTX Metals — key metrics, project highlights, and corporate overview at a glance.
+                    </p>
+                </div>
+            </div>
+
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-50 to-transparent" />
+        </div>
+
+        {/* Main Content */}
+        <div className="container mx-auto px-6 py-20 flex flex-col lg:flex-row gap-16">
+            <div className="lg:w-3/4 space-y-12">
+                {/* Download Card */}
+                <div className="reveal-up">
+                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-orange mb-6">Latest</h2>
+                    <div className="group bg-white p-10 rounded-3xl border border-gray-100 hover:border-teal-200 hover:shadow-2xl transition-all relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-500/5 rounded-full blur-[80px] group-hover:bg-teal-500/10 transition-all" />
+                        <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                            <div className="flex items-start gap-6">
+                                <div className="bg-teal-50 p-5 rounded-2xl group-hover:bg-teal-600 transition-all">
+                                    <Info className="text-teal-600 group-hover:text-white transition-colors" size={36} />
                                 </div>
-                                <button className={`p-3 rounded-full ${doc.color === 'blue' ? 'text-blue-600 hover:bg-blue-600' : doc.color === 'green' ? 'text-green-600 hover:bg-green-600' : 'text-purple-600 hover:bg-purple-600'} hover:text-white transition-all`}>
-                                    <Download size={20} />
-                                </button>
+                                <div>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-teal-600 mb-2 block">October 2025</span>
+                                    <h3 className="text-2xl font-black uppercase tracking-tight text-gray-900 mb-2">PTX Metals Fact Sheet</h3>
+                                    <p className="text-gray-500 font-light">Company overview, key metrics, project highlights, and capital structure summary</p>
+                                </div>
+                            </div>
+                            <a
+                                href="https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/04064814/PTX-Metals-Fact-Sheet-October-2025.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-teal-600 transition-all shadow-lg group-hover:shadow-xl"
+                            >
+                                <Download size={18} /> Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Key Highlights */}
+                <div className="reveal-up">
+                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-6">At a Glance</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {[
+                            { label: "Ticker Symbols", value: "TSX.V: PTX | OTCQB: PANXF | FRA: 9PX" },
+                            { label: "Shares Outstanding", value: "171,150,598" },
+                            { label: "Flagship Project", value: "W2 Cu-Ni-PGE — Ring of Fire, ON" },
+                            { label: "Gold Project", value: "Shining Tree — South Timmins JV" },
+                            { label: "Management", value: "Greg Ferron, CEO" },
+                            { label: "Jurisdiction", value: "Ontario, Canada (Tier-1)" },
+                        ].map((item, idx) => (
+                            <div key={idx} className="bg-white p-6 rounded-2xl border border-gray-100">
+                                <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">{item.label}</span>
+                                <span className="text-lg font-black text-gray-900">{item.value}</span>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                {/* Archive Section */}
-                <div className="bg-gradient-to-br from-gray-100 to-gray-50 p-10 rounded-3xl reveal-up">
-                    <h3 className="text-xl font-black uppercase tracking-tight text-gray-900 mb-6">Presentation Archive</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {['Q4 2025', 'Q3 2025', 'Q2 2025', 'Q1 2025'].map((quarter) => (
-                            <button key={quarter} className="flex items-center justify-between p-4 bg-white rounded-xl hover:shadow-md transition-all group">
-                                <span className="font-bold text-gray-700 group-hover:text-brand-orange transition-colors">{quarter} Corporate Presentation</span>
-                                <Download size={16} className="text-gray-400 group-hover:text-brand-orange transition-colors" />
-                            </button>
-                        ))}
+                {/* Links to other investor pages */}
+                <div className="bg-gradient-to-br from-teal-600 to-teal-800 p-10 rounded-3xl text-white reveal-up relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[80px]" />
+                    <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div>
+                            <h3 className="text-2xl font-black uppercase tracking-tight mb-2">Want More Detail?</h3>
+                            <p className="text-teal-200 font-light">View our full corporate presentation or financial reports.</p>
+                        </div>
+                        <div className="flex gap-4">
+                            <Link to="/investors/presentations" className="flex items-center gap-3 bg-white text-teal-600 px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:shadow-xl transition-all">
+                                Presentation <ArrowUpRight size={14} />
+                            </Link>
+                            <Link to="/investors/financials" className="flex items-center gap-3 bg-white/20 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-white/30 transition-all border border-white/20">
+                                Financials
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -471,54 +561,86 @@ export const Financials: React.FC = () => (
         {/* Main Content */}
         <div className="container mx-auto px-6 py-20 flex flex-col lg:flex-row gap-16">
             <div className="lg:w-3/4 space-y-12">
-                {/* Latest Reports */}
-                <div className="reveal-up">
-                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-orange mb-6">Latest Reports</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        {[
-                            { title: "Q4 2025 Financial Statements", type: "Annual", date: "Dec 31, 2025" },
-                            { title: "Q4 2025 MD&A", type: "Analysis", date: "Dec 31, 2025" },
-                        ].map((doc, idx) => (
-                            <div key={idx} className="group bg-white p-8 rounded-2xl border border-gray-100 hover:border-blue-200 hover:shadow-xl transition-all relative overflow-hidden">
-                                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-[50px] group-hover:bg-blue-500/10 transition-all" />
-                                <div className="relative z-10">
-                                    <div className="flex items-center justify-between mb-4">
-                                        <span className="text-[10px] font-black uppercase tracking-widest text-blue-600 bg-blue-50 px-3 py-1 rounded-full">{doc.type}</span>
-                                        <span className="text-xs text-gray-400">{doc.date}</span>
+                {/* Fiscal Year Sections */}
+                {[
+                    {
+                        year: "Fiscal Year 2025", subtitle: "Year ending March 31, 2025", reports: [
+                            { period: "Q2 — Sep 30, 2025", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2026/01/14083855/PTX-Metals-FS-September-30-2025.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2026/01/14083900/PTX-Metals-MDA-Sept-30-2025.pdf" },
+                            { period: "Q1 — Jun 30, 2025", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2026/01/14083852/PTX-Metals-draft-FS-June-30-2025.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2026/01/14083858/PTX-Metals-MDA-June-30-2025-V1.pdf" },
+                            { period: "Annual — Mar 31, 2025", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2026/01/14083854/PTX-Metals-FS-March-31-2025.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2026/01/14083856/PTX-Metals-MDA-March-31-2025.pdf" },
+                        ]
+                    },
+                    {
+                        year: "Fiscal Year 2024", subtitle: "Year ending March 31, 2024", reports: [
+                            { period: "Q3 — Dec 31, 2024", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/04/30080429/PTX-Metals-FS_Dec-31-2024.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/04/30080455/PTX-Metals-MDA_Dec-31-2024.pdf" },
+                            { period: "Q2 — Sep 30, 2024", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21192239/PTX-Metals_FS_September_30_2024.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21193318/PTX_Metals_MDA_September_30_2024.pdf" },
+                            { period: "Q1 — Jun 30, 2024", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21193313/PTX-Metals_FS_June_30_2024.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21193317/PTX_Metals_MDA_June_30_2024.pdf" },
+                            { period: "Annual — Mar 31, 2024", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21193314/PTX-Metals_FS_March_31_2024.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21193316/PTX-Metals_MDA_March_31_2024.pdf" },
+                        ]
+                    },
+                    {
+                        year: "Fiscal Year 2023", subtitle: "Year ending March 31, 2023", reports: [
+                            { period: "Q3 — Dec 31, 2023", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21192324/PTX-Metals_FS_December_31_2023.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/02/21192424/PTX-Metals_MDA_December_31_2023.pdf" },
+                            { period: "Q2 — Sep 30, 2023", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/12/16165952/Platinex_FS_-_September_30_2023_final21.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/12/16165952/Platinex_MDA_September_30_2023_final.pdf" },
+                            { period: "Q1 — Jun 30, 2023", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/09/16170029/Platinex_FS_June_30_2023_final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/09/16170029/Platinex_MDA_June_30_2023_final.pdf" },
+                            { period: "Annual — Mar 31, 2023", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/06/16170114/Platinex-FS-March-31-2023-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/06/16170114/Platinex-MDA-March-31-2023-final.pdf" },
+                        ]
+                    },
+                    {
+                        year: "Fiscal Year 2022", subtitle: "Year ending March 31, 2022", reports: [
+                            { period: "Q3 — Dec 31, 2022", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/05/16170118/Platinex-FS-December-31-2022-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/05/16170118/Platinex-MDA-December-31-2022-final.pdf" },
+                            { period: "Q2 — Sep 30, 2022", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-FS-September-30-2022-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170137/Platinex-MDA-September-30-2022-final.pdf" },
+                            { period: "Q1 — Jun 30, 2022", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-FS-June-30-2022-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170137/Platinex-MDA-June-30-2022-final.pdf" },
+                            { period: "Annual — Mar 31, 2022", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-FS-March-31-2022-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170137/Platinex-MDA-Mar-31-2022-final.pdf" },
+                        ]
+                    },
+                    {
+                        year: "Fiscal Year 2021", subtitle: "Year ending March 31, 2021", reports: [
+                            { period: "Q3 — Dec 31, 2021", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-FS-December-31-2021-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-MDA-Dec-31-2021-final.pdf" },
+                            { period: "Q2 — Sep 30, 2021", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170159/Platinex-FS-September-30-2021-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-MDA-Sep-30-2021-final.pdf" },
+                            { period: "Q1 — Jun 30, 2021", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170159/Platinex-FS-June-30-2021.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-MDA-June-30-2021-final.pdf" },
+                            { period: "Annual — Mar 31, 2021", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170159/Platinex-FS-March-31-2021-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170138/Platinex-MDA-March-31-2021-final.pdf" },
+                        ]
+                    },
+                    {
+                        year: "Fiscal Year 2020", subtitle: "Year ending March 31, 2020", reports: [
+                            { period: "Q3 — Dec 31, 2020", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-FS-Dec-31-2020-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-MDA-December-31-2020-final.pdf" },
+                            { period: "Q2 — Sep 30, 2020", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-FS-September-30-2020-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-MDA-September-30-2020-final.pdf" },
+                            { period: "Q1 — Jun 30, 2020", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-FS-June-30-2020-final-1.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170200/Platinex-MDA-June-30-2020-final.pdf" },
+                            { period: "Annual — Mar 31, 2020", fs: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170232/Platinex-FS-March-31-2020-final.pdf", mda: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/02/16170232/Platinex-MDA-March-31-2020.pdf" },
+                        ]
+                    },
+                ].map((fy, fyIdx) => (
+                    <div key={fyIdx} className="reveal-up">
+                        <div className="flex items-center justify-between mb-6">
+                            <h2 className="text-xs font-black uppercase tracking-[0.3em] text-brand-orange">{fy.year}</h2>
+                            <span className="text-xs text-gray-400 font-bold">{fy.subtitle}</span>
+                        </div>
+                        <div className="bg-white rounded-3xl border border-gray-100 overflow-hidden">
+                            {fy.reports.map((report, idx) => (
+                                <div key={idx} className={`flex items-center justify-between p-6 hover:bg-gray-50 transition-all ${idx !== fy.reports.length - 1 ? 'border-b border-gray-100' : ''}`}>
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
+                                            <FileText size={20} className="text-gray-400" />
+                                        </div>
+                                        <div>
+                                            <h4 className="font-black uppercase tracking-tight text-gray-900">{report.period}</h4>
+                                            <p className="text-gray-400 text-sm">Financial Statements & MD&A</p>
+                                        </div>
                                     </div>
-                                    <h3 className="text-lg font-black uppercase tracking-tight text-gray-900 mb-4">{doc.title}</h3>
-                                    <button className="flex items-center gap-2 text-blue-600 font-black text-xs uppercase tracking-widest hover:text-blue-800 transition-colors">
-                                        <Download size={14} /> Download PDF
-                                    </button>
+                                    <div className="flex items-center gap-3">
+                                        <a href={report.fs} target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-brand-orange transition-colors flex items-center gap-1">
+                                            <Download size={12} /> FS
+                                        </a>
+                                        <a href={report.mda} target="_blank" rel="noopener noreferrer" className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-brand-orange transition-colors flex items-center gap-1">
+                                            <Download size={12} /> MD&A
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
-                </div>
-
-                {/* Quarterly Reports */}
-                <div className="reveal-up">
-                    <h2 className="text-xs font-black uppercase tracking-[0.3em] text-gray-400 mb-6">2025 Quarterly Reports</h2>
-                    <div className="bg-white rounded-3xl border border-gray-100 overflow-hidden">
-                        {['Q3 2025', 'Q2 2025', 'Q1 2025'].map((quarter, idx) => (
-                            <div key={idx} className={`flex items-center justify-between p-6 hover:bg-gray-50 transition-all ${idx !== 2 ? 'border-b border-gray-100' : ''}`}>
-                                <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center">
-                                        <FileText size={20} className="text-gray-400" />
-                                    </div>
-                                    <div>
-                                        <h4 className="font-black uppercase tracking-tight text-gray-900">{quarter}</h4>
-                                        <p className="text-gray-400 text-sm">Financial Statements & MD&A</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-center gap-3">
-                                    <button className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-brand-orange transition-colors">Statements</button>
-                                    <button className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-gray-500 hover:text-brand-orange transition-colors">MD&A</button>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                ))}
 
                 {/* SEDAR Link */}
                 <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-10 rounded-3xl text-white reveal-up relative overflow-hidden">
@@ -602,11 +724,11 @@ export const NoticeAndAccess: React.FC = () => (
                                 </div>
                             </div>
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="flex items-center justify-center gap-3 bg-brand-dark text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-brand-orange transition-all shadow-lg">
-                                    <Download size={16} /> Notice Packet
+                                <button disabled className="flex items-center justify-center gap-3 bg-gray-400 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs cursor-not-allowed opacity-70">
+                                    <Download size={16} /> Notice Packet — Coming Soon
                                 </button>
-                                <button className="flex items-center justify-center gap-3 bg-green-600 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs hover:bg-green-700 transition-all shadow-lg">
-                                    <FileText size={16} /> Information Circular
+                                <button disabled className="flex items-center justify-center gap-3 bg-gray-400 text-white px-8 py-4 rounded-full font-black uppercase tracking-widest text-xs cursor-not-allowed opacity-70">
+                                    <FileText size={16} /> Information Circular — Coming Soon
                                 </button>
                             </div>
                         </div>
@@ -640,13 +762,25 @@ export const NoticeAndAccess: React.FC = () => (
                 <div className="bg-gradient-to-br from-gray-100 to-gray-50 p-10 rounded-3xl reveal-up">
                     <h3 className="text-xl font-black uppercase tracking-tight text-gray-900 mb-6">Previous Meetings</h3>
                     <div className="space-y-4">
-                        {['AGM 2025', 'AGM 2024', 'AGM 2023'].map((meeting) => (
-                            <div key={meeting} className="flex items-center justify-between p-4 bg-white rounded-xl hover:shadow-md transition-all group">
-                                <span className="font-bold text-gray-700 group-hover:text-brand-orange transition-colors">{meeting} Materials</span>
+                        {[
+                            { meeting: 'AGM 2025', notice: null, circular: null },
+                            { meeting: 'AGM 2024', notice: null, circular: null },
+                            { meeting: 'AGM 2023', notice: null, circular: null },
+                        ].map((item) => (
+                            <div key={item.meeting} className="flex items-center justify-between p-4 bg-white rounded-xl hover:shadow-md transition-all group">
+                                <span className="font-bold text-gray-700 group-hover:text-brand-orange transition-colors">{item.meeting} Materials</span>
                                 <div className="flex gap-2">
-                                    <button className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-orange transition-colors">Notice</button>
+                                    {item.notice ? (
+                                        <a href={item.notice} target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-orange transition-colors">Notice</a>
+                                    ) : (
+                                        <span className="text-xs font-bold uppercase tracking-widest text-gray-300 cursor-default">Notice</span>
+                                    )}
                                     <span className="text-gray-300">|</span>
-                                    <button className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-orange transition-colors">Circular</button>
+                                    {item.circular ? (
+                                        <a href={item.circular} target="_blank" rel="noopener noreferrer" className="text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-brand-orange transition-colors">Circular</a>
+                                    ) : (
+                                        <span className="text-xs font-bold uppercase tracking-widest text-gray-300 cursor-default">Circular</span>
+                                    )}
                                 </div>
                             </div>
                         ))}

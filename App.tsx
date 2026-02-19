@@ -3,14 +3,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ChatBot from './components/ChatBot';
+
 
 // Pages
 // Pages
 import Home from './pages/Home';
 import { AboutUs, Management, Board, Advisors } from './pages/AboutCorporate';
 import { ProjectW2, ProjectShiningTree, ProjectHeenan, ProjectRoyalty, ProjectsOverview } from './pages/Projects';
-import Investors, { Presentations, Financials, NoticeAndAccess, CautionaryNotes } from './pages/Investors';
+import Investors, { Presentations, FactSheet, Financials, NoticeAndAccess, CautionaryNotes } from './pages/Investors';
 import News, { NewsArticle } from './pages/News';
 import { ContactUs, Subscribe } from './pages/Contact';
 import ESGPolicy from './pages/ESGPolicy';
@@ -52,6 +52,7 @@ const App: React.FC = () => {
             {/* Investors */}
             <Route path="/investors" element={<Investors />} />
             <Route path="/investors/presentations" element={<Presentations />} />
+            <Route path="/investors/fact-sheet" element={<FactSheet />} />
             <Route path="/investors/financials" element={<Financials />} />
             <Route path="/investors/notice-access" element={<NoticeAndAccess />} />
             <Route path="/investors/cautionary" element={<CautionaryNotes />} />
@@ -75,7 +76,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
-        <ChatBot />
+
       </div>
     </Router>
   );

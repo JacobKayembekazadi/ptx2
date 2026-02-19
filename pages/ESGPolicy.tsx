@@ -79,12 +79,12 @@ const ESGPolicy: React.FC = () => {
                 {
                     icon: Scale,
                     title: 'Board Oversight',
-                    text: 'Our Board of Directors provides strategic guidance and oversight on all ESG matters with dedicated committee review.',
+                    text: 'Our Board of Directors provides strategic guidance and oversight on ESG matters as part of its governance responsibilities.',
                 },
                 {
                     icon: FileCheck,
                     title: 'Regulatory Compliance',
-                    text: 'Full compliance with all applicable environmental, health, and safety regulations across all jurisdictions.',
+                    text: 'Committed to compliance with all applicable environmental, health, and safety regulations across our operating jurisdictions.',
                 },
                 {
                     icon: BarChart3,
@@ -118,7 +118,7 @@ const ESGPolicy: React.FC = () => {
                     }} />
                 </div>
 
-                <div className="relative container mx-auto px-6 pb-16 pt-40">
+                <div className="relative container mx-auto px-6 pb-12 md:pb-16 pt-24 md:pt-32 lg:pt-40">
                     <div className="max-w-4xl">
                         <div className="flex items-center gap-3 mb-6">
                             <span className="px-4 py-1.5 bg-emerald-500/20 border border-emerald-500/40 rounded-full text-emerald-400 text-[10px] font-black uppercase tracking-widest">
@@ -128,7 +128,7 @@ const ESGPolicy: React.FC = () => {
                                 Corporate Responsibility
                             </span>
                         </div>
-                        <h1 className="text-6xl md:text-7xl font-black uppercase tracking-tighter text-white leading-[0.9] mb-6">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter text-white leading-[0.9] mb-6">
                             ESG<br />
                             <span className="text-brand-orange">Policy</span>
                         </h1>
@@ -144,7 +144,7 @@ const ESGPolicy: React.FC = () => {
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/10">
                         {[
-                            { value: '100%', label: 'Regulatory Compliance' },
+                            { value: 'Committed', label: 'Regulatory Compliance' },
                             { value: 'Active', label: 'First Nations Partnerships' },
                             { value: 'LIDAR', label: 'Survey Technology' },
                             { value: 'Ongoing', label: 'Reclamation Programs' },
@@ -159,7 +159,7 @@ const ESGPolicy: React.FC = () => {
             </section>
 
             {/* Introduction */}
-            <section className="py-20">
+            <section className="py-12 md:py-20">
                 <div className="container mx-auto px-6">
                     <div className="max-w-4xl mx-auto text-center">
                         <div className="flex items-center justify-center gap-3 mb-6">
@@ -176,7 +176,7 @@ const ESGPolicy: React.FC = () => {
                     </div>
 
                     {/* Three Pillars Overview Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mt-10 md:mt-16 max-w-5xl mx-auto">
                         {pillars.map((pillar) => (
                             <div key={pillar.title} className="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-500 group border border-gray-100">
                                 <div className={`w-14 h-14 ${pillar.colorLight} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>

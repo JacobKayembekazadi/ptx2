@@ -15,12 +15,12 @@ export const ProjectsOverview: React.FC = () => {
     {
       title: "W2 Cu-Ni-PGE Project",
       location: "Ring of Fire, Ontario",
-      desc: "100% owned, 22,700+ hectare land package. Exploration Target of 135Mt @ 0.78% CuEq. Currently drilling 5,000m program.",
+      desc: "22,700+ hectare land package. Exploration Target of 60-135Mt @ 0.5-0.78% CuEq*. Currently drilling 5,000m program.",
       path: "/projects/w2",
       image: "https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/10/08180223/2025-03-11-12-15-46-831.png",
       highlight: "Flagship Asset",
       color: "from-brand-orange to-orange-600",
-      stats: ['135Mt Target', '100% Owned', 'Drilling Active'],
+      stats: ['60-135Mt Target*', '22,700+ ha', 'Drilling Active'],
     },
     {
       title: "Shining Tree Gold",
@@ -57,7 +57,7 @@ export const ProjectsOverview: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen">
       {/* Hero */}
-      <div className="relative h-[75vh] min-h-[600px] w-full flex items-end pb-20 overflow-hidden">
+      <div className="relative h-[75vh] min-h-[400px] md:min-h-[600px] w-full flex items-end pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/10/08180223/2025-03-11-12-15-46-831.png')" }}
@@ -95,7 +95,7 @@ export const ProjectsOverview: React.FC = () => {
             {[
               { value: '4', label: 'Active Projects', icon: Target },
               { value: '50,000+', label: 'Hectares', icon: MapPin },
-              { value: '135Mt', label: 'W2 Target', icon: Gem },
+              { value: '60-135Mt', label: 'W2 Target*', icon: Gem },
               { value: '7+', label: 'NSR Royalties', icon: Coins },
             ].map((s, i) => (
               <div key={i} className="py-8 px-6 text-center">
@@ -156,7 +156,7 @@ export const ProjectsOverview: React.FC = () => {
 
       {/* CTA */}
       <div className="container mx-auto px-6 pb-24">
-        <div className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl overflow-hidden p-16 text-center">
+        <div className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl overflow-hidden p-6 md:p-16 text-center">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(rgba(229,100,23,0.08) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px]" />
           <div className="relative z-10">
@@ -176,6 +176,9 @@ export const ProjectsOverview: React.FC = () => {
             </div>
           </div>
         </div>
+        <p className="text-[11px] text-gray-400 mt-6 leading-relaxed max-w-4xl">
+          * The Exploration Target is conceptual in nature. The potential quantity and grade is conceptual and there has been insufficient exploration to define a mineral resource. It is uncertain if further exploration will result in the target being delineated as a mineral resource. See the <Link to="/investors/cautionary" className="text-brand-orange hover:underline">Cautionary Notes</Link> page for full disclosure. Neighbouring project resources cited are as reported by their respective operators and are not indicative of mineralization on PTX properties.
+        </p>
       </div>
     </div>
   );
@@ -187,7 +190,7 @@ export const ProjectW2: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen">
       {/* Hero */}
-      <div className="relative h-[70vh] min-h-[550px] w-full flex items-end pb-20 overflow-hidden">
+      <div className="relative h-[70vh] min-h-[350px] md:min-h-[550px] w-full flex items-end pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2025/10/08180223/2025-03-11-12-15-46-831.png')" }}
@@ -215,7 +218,7 @@ export const ProjectW2: React.FC = () => {
               W2 <span className="text-brand-orange">Cu-Ni-PGE</span>
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl leading-relaxed font-light">
-              Gateway to the Ring of Fire — 135Mt Exploration Target across 22,700+ hectares. 100% PTX owned.
+              Gateway to the Ring of Fire — 60-135Mt Exploration Target* across 22,700+ hectares.
             </p>
           </div>
         </div>
@@ -226,11 +229,11 @@ export const ProjectW2: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-3 md:grid-cols-6 divide-x divide-gray-100">
             {[
-              { value: '135Mt', label: 'Target' },
-              { value: '0.78%', label: 'CuEq' },
-              { value: '2.3B lbs', label: 'Cu Equiv' },
+              { value: '60-135Mt', label: 'Target*' },
+              { value: '0.5-0.78%', label: 'CuEq' },
+              { value: 'Up to 2.3B lbs', label: 'Cu Equiv' },
               { value: '22,700 ha', label: 'Land' },
-              { value: '100%', label: 'Owned' },
+              { value: 'Active', label: 'Status' },
               { value: '5,000m', label: 'Drilling' },
             ].map((m, i) => (
               <div key={i} className="py-4 px-3 text-center">
@@ -255,7 +258,7 @@ export const ProjectW2: React.FC = () => {
               <PlayCircle size={48} />
             </div>
             <h2 className="text-white text-3xl font-black uppercase tracking-tighter mb-2">Discovery in Motion</h2>
-            <p className="text-white/70 max-w-lg font-light">Visualizing high-priority targets within the Lansdowne House Igneous Complex.</p>
+            <p className="text-white/70 max-w-lg font-light">Visualizing high-priority targets within the W2 Cu-Ni-PGE Property.</p>
           </div>
         </div>
 
@@ -278,7 +281,7 @@ export const ProjectW2: React.FC = () => {
               <MapPin size={20} /> Land Position
             </h3>
             <div className="space-y-4 text-sm">
-              <div><span className="text-[9px] font-bold uppercase tracking-widest text-gray-500">Ownership</span><p className="font-bold text-gray-200">100% PTX — No payments required</p></div>
+              <div><span className="text-[9px] font-bold uppercase tracking-widest text-gray-500">Operator</span><p className="font-bold text-gray-200">PTX Metals Corp.</p></div>
               <div><span className="text-[9px] font-bold uppercase tracking-widest text-gray-500">Total Area</span><p className="font-bold text-gray-200">&gt;22,700 Hectares</p></div>
               <div><span className="text-[9px] font-bold uppercase tracking-widest text-gray-500">Jurisdiction</span><p className="font-bold text-gray-200">Ring of Fire, Ontario</p></div>
             </div>
@@ -303,9 +306,9 @@ export const ProjectW2: React.FC = () => {
           <div className="bg-white p-10 rounded-2xl border border-gray-100 shadow-sm mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
               {[
-                { value: '135Mt', sub: '@ 0.78% CuEq (0.5% Cut-off)' },
-                { value: '2.3B lbs', sub: 'Copper Equivalent (All Metals)' },
-                { value: 'Open Pit', sub: 'Near-Surface Potential' },
+                { value: '60-135Mt', sub: '@ 0.5-0.78% CuEq (0.5% Cut-off)' },
+                { value: 'Up to 2.3B lbs', sub: 'Copper Equivalent (All Metals)' },
+                { value: 'Near Surface', sub: 'Shallow Geometry Identified' },
               ].map((t, i) => (
                 <div key={i} className="text-center">
                   <div className="text-4xl font-black text-brand-orange">{t.value}</div>
@@ -395,7 +398,7 @@ export const ProjectW2: React.FC = () => {
               <h3 className="text-xl font-black uppercase tracking-tight">Geology</h3>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              The W2 Project covers the layered mafic-ultramafic Lansdowne House Igneous Complex — highly prospective for Cu-Ni and reef-type PGE deposits. Past exploration totaling ~$25M by Inco, KWG, and Aurora Platinum with ~20,000m of drilling.
+              The W2 Project covers a layered mafic-ultramafic intrusive complex — highly prospective for Cu-Ni and reef-type PGE deposits. Past exploration totaling ~$25M by Inco, KWG, and Aurora Platinum with ~20,000m of drilling.
             </p>
           </div>
         </div>
@@ -408,8 +411,8 @@ export const ProjectW2: React.FC = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { num: '01', text: 'Expansion drilling for large tonnage open-pit potential with step-out and confirmation drilling' },
-              { num: '02', text: 'Target massive sulphide zones — up to 14% Cu, 11 g/t Au, 2% Ni, 4 g/t PGEs' },
+              { num: '01', text: 'Expansion drilling to test large tonnage near-surface potential with step-out and confirmation drilling' },
+              { num: '02', text: 'Target massive sulphide zones — historical grab samples returned up to 14% Cu, 11 g/t Au, 2% Ni, 4 g/t PGEs (not representative of bulk mineralization)' },
               { num: '03', text: 'Three-tiered exploration: confirmation → expansion → regional discovery' },
               { num: '04', text: 'Exit strategy as camp develops further with infrastructure and road access' },
             ].map((s, i) => (
@@ -462,6 +465,13 @@ export const ProjectW2: React.FC = () => {
             <FileText size={18} className="mr-3" /> Download PDF
           </a>
         </div>
+
+        {/* QP & Disclaimers */}
+        <div className="bg-gray-100 p-8 rounded-2xl text-xs text-gray-500 leading-relaxed space-y-3">
+          <p><strong className="text-gray-700">Qualified Person:</strong> The technical information on this page has been reviewed and approved by R. Tim Trusler, P.Geo., a Qualified Person as defined by National Instrument 43-101.</p>
+          <p><strong className="text-gray-700">Exploration Target Cautionary Note:</strong> The Exploration Target of 60-135Mt at 0.5-0.78% CuEq is conceptual in nature. There has been insufficient exploration to define a mineral resource and it is uncertain if further exploration will result in the target being delineated as a mineral resource. CuEq calculations use metal prices and recoveries as outlined in the NI 43-101 Technical Report dated September 2024, available on <a href="https://www.sedarplus.ca" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">SEDAR+</a>.</p>
+          <p><strong className="text-gray-700">Historical Results:</strong> Historical drilling results referenced herein are sourced from assessment files and prior operator reports. PTX has not independently verified these results and they should not be relied upon. A Qualified Person has not done sufficient work to classify these as current mineral resources.</p>
+        </div>
       </div>
     </div>
   );
@@ -473,7 +483,7 @@ export const ProjectShiningTree: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen">
       {/* Hero */}
-      <div className="relative h-[65vh] min-h-[500px] w-full flex items-end pb-20 overflow-hidden">
+      <div className="relative h-[65vh] min-h-[350px] md:min-h-[500px] w-full flex items-end pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2024/04/05104654/STJV-PTX-FNC-Neighbours-265k-no-nameplate-legend-LS-010624-scaled.jpg')" }}
@@ -509,7 +519,7 @@ export const ProjectShiningTree: React.FC = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
             {[
               { icon: TrendingUp, value: '28,000 ha', label: 'Land Package' },
-              { icon: Shield, value: '75%', label: 'PTX Ownership' },
+              { icon: Shield, value: '75%', label: 'PTX Interest' },
               { icon: MapPin, value: '5 Mines', label: 'Within 100km' },
               { icon: Coins, value: '~$10M', label: 'Historical Work' },
             ].map((s, i) => (
@@ -539,8 +549,8 @@ export const ProjectShiningTree: React.FC = () => {
               </span>
             </div>
             <div className="bg-gradient-to-br from-gray-900 to-gray-800 p-8 rounded-2xl text-white border-t-2 border-brand-orange">
-              <h4 className="font-black uppercase text-xs tracking-widest text-brand-orange mb-2">McFarlane Lake — Juby Deposit</h4>
-              <p className="text-4xl font-black mb-1">4 Moz Au</p>
+              <h4 className="font-black uppercase text-xs tracking-widest text-brand-orange mb-2">Aris Mining — Juby Deposit</h4>
+              <p className="text-4xl font-black mb-1">2.3 Moz Au</p>
               <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest flex items-center gap-2">
                 <span className="w-1.5 h-1.5 bg-yellow-400 rounded-full"></span> Development Stage
               </span>
@@ -659,7 +669,7 @@ export const ProjectHeenan: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen">
       {/* Hero */}
-      <div className="relative h-[65vh] min-h-[500px] w-full flex items-end pb-20 overflow-hidden">
+      <div className="relative h-[65vh] min-h-[350px] md:min-h-[500px] w-full flex items-end pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2024/04/05104654/STJV-PTX-FNC-Neighbours-265k-no-nameplate-legend-LS-010624-scaled.jpg')" }}
@@ -695,10 +705,10 @@ export const ProjectHeenan: React.FC = () => {
           <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
             <div className="flex items-center gap-3 mb-6">
               <Shield size={20} className="text-brand-orange" />
-              <h3 className="text-xl font-black uppercase tracking-tight">Ownership</h3>
+              <h3 className="text-xl font-black uppercase tracking-tight">Joint Venture</h3>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Part of the <strong className="text-gray-900">South Timmins Mining JV</strong> with Fancamp Exploration (75% PTX, 25% Fancamp). Located in the Swayze Greenstone Belt.
+              Part of the <strong className="text-gray-900">South Timmins Mining JV</strong> with Fancamp Exploration (75% PTX interest, 25% Fancamp). Located in the Swayze Greenstone Belt.
             </p>
             <div className="mt-4 flex gap-2">
               <span className="bg-gray-100 text-gray-600 text-[9px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-full">390 ha Heenan</span>
@@ -837,7 +847,7 @@ export const ProjectRoyalty: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen">
       {/* Hero */}
-      <div className="relative h-[65vh] min-h-[500px] w-full flex items-end pb-20 overflow-hidden">
+      <div className="relative h-[65vh] min-h-[350px] md:min-h-[500px] w-full flex items-end pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2023/01/16170408/projects-bg.jpg')" }}
@@ -898,7 +908,7 @@ export const ProjectRoyalty: React.FC = () => {
                 </div>
               </div>
               <div className="pt-6 border-t border-white/10">
-                <p className="text-sm text-gray-400 leading-relaxed">Portfolio includes 100% owned uranium projects in the Athabasca Basin, Thelon Basin, and Quebec — Canada's premier uranium jurisdictions.</p>
+                <p className="text-sm text-gray-400 leading-relaxed">Portfolio includes uranium projects in the Athabasca Basin, Thelon Basin, and Quebec — Canada's premier uranium jurisdictions.</p>
               </div>
             </div>
           </div>

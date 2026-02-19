@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Send, CheckCircle, ArrowRight, Building2, Clock, Globe } from 'lucide-react';
 
 export const ContactUs: React.FC = () => {
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'sent'>('idle');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setFormStatus('sending');
-    setTimeout(() => setFormStatus('sent'), 1500);
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const subject = encodeURIComponent(formData.get('subject') as string || 'Website Inquiry');
+    const body = encodeURIComponent(
+      `Name: ${formData.get('firstName')} ${formData.get('lastName')}\nEmail: ${formData.get('email')}\n\n${formData.get('message')}`
+    );
+    window.location.href = `mailto:info@ptxmetals.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -103,20 +108,12 @@ export const ContactUs: React.FC = () => {
               <h2 className="text-3xl font-black uppercase tracking-tight mb-2 text-gray-900">Send a Message</h2>
               <p className="text-gray-500 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-              {formStatus === 'sent' ? (
-                <div className="text-center py-16">
-                  <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <CheckCircle className="text-green-500" size={40} />
-                  </div>
-                  <h3 className="text-2xl font-black uppercase tracking-tight mb-2 text-gray-900">Message Sent!</h3>
-                  <p className="text-gray-500">We'll be in touch shortly.</p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">First Name</label>
                       <input
+                        name="firstName"
                         type="text"
                         required
                         className="w-full bg-gray-50 border-2 border-gray-100 p-4 rounded-xl focus:outline-none focus:border-brand-orange focus:bg-white transition-all font-medium"
@@ -126,6 +123,7 @@ export const ContactUs: React.FC = () => {
                     <div className="space-y-2">
                       <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Last Name</label>
                       <input
+                        name="lastName"
                         type="text"
                         required
                         className="w-full bg-gray-50 border-2 border-gray-100 p-4 rounded-xl focus:outline-none focus:border-brand-orange focus:bg-white transition-all font-medium"
@@ -137,6 +135,7 @@ export const ContactUs: React.FC = () => {
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Email Address</label>
                     <input
+                      name="email"
                       type="email"
                       required
                       className="w-full bg-gray-50 border-2 border-gray-100 p-4 rounded-xl focus:outline-none focus:border-brand-orange focus:bg-white transition-all font-medium"
@@ -146,7 +145,7 @@ export const ContactUs: React.FC = () => {
 
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Subject</label>
-                    <select className="w-full bg-gray-50 border-2 border-gray-100 p-4 rounded-xl focus:outline-none focus:border-brand-orange focus:bg-white transition-all font-medium cursor-pointer">
+                    <select name="subject" className="w-full bg-gray-50 border-2 border-gray-100 p-4 rounded-xl focus:outline-none focus:border-brand-orange focus:bg-white transition-all font-medium cursor-pointer">
                       <option>Investor Inquiry</option>
                       <option>Partnership Opportunity</option>
                       <option>Media Request</option>
@@ -157,6 +156,7 @@ export const ContactUs: React.FC = () => {
                   <div className="space-y-2">
                     <label className="text-[10px] font-black uppercase tracking-widest text-gray-400">Message</label>
                     <textarea
+                      name="message"
                       rows={5}
                       required
                       className="w-full bg-gray-50 border-2 border-gray-100 p-4 rounded-xl focus:outline-none focus:border-brand-orange focus:bg-white transition-all font-medium resize-none"
@@ -166,23 +166,12 @@ export const ContactUs: React.FC = () => {
 
                   <button
                     type="submit"
-                    disabled={formStatus === 'sending'}
-                    className="w-full bg-brand-dark text-white py-5 rounded-xl font-black uppercase tracking-widest hover:bg-brand-orange transition-all flex items-center justify-center gap-3 group disabled:opacity-70"
+                    className="w-full bg-brand-dark text-white py-5 rounded-xl font-black uppercase tracking-widest hover:bg-brand-orange transition-all flex items-center justify-center gap-3 group"
                   >
-                    {formStatus === 'sending' ? (
-                      <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                        Sending...
-                      </>
-                    ) : (
-                      <>
-                        Send Message
-                        <Send size={18} className="group-hover:translate-x-1 transition-transform" />
-                      </>
-                    )}
+                    Send Message
+                    <Send size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </form>
-              )}
             </div>
           </div>
 
@@ -226,12 +215,12 @@ export const ContactUs: React.FC = () => {
               <div className="relative z-10">
                 <h3 className="text-xl font-black uppercase tracking-tight mb-3">Subscribe to Updates</h3>
                 <p className="text-gray-300 text-sm mb-6">Get the latest news, drill results, and corporate announcements.</p>
-                <a
-                  href="/subscribe"
+                <Link
+                  to="/subscribe"
                   className="inline-flex items-center gap-2 bg-brand-orange text-white px-6 py-3 rounded-full font-black uppercase text-xs tracking-widest hover:bg-white hover:text-brand-dark transition-all"
                 >
                   Subscribe Now <ArrowRight size={14} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

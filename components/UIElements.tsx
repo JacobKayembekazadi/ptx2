@@ -6,7 +6,7 @@ import { ChevronRight } from 'lucide-react';
 
 export const Banner: React.FC<{ title: string; image: string; subtitle?: string }> = ({ title, image, subtitle }) => {
   return (
-    <div className="relative h-[400px] w-full flex items-center overflow-hidden">
+    <div className="relative h-auto min-h-[300px] md:h-[400px] w-full flex items-center overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${image})` }}
@@ -14,7 +14,7 @@ export const Banner: React.FC<{ title: string; image: string; subtitle?: string 
       <div className="absolute inset-0 bg-black/60" />
       <div className="container relative mx-auto px-6">
         <div className="max-w-2xl border-l-4 border-brand-orange pl-8">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white uppercase tracking-tighter mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-extrabold text-white uppercase tracking-tighter mb-4">
             {title}
           </h1>
           {subtitle && <p className="text-xl text-gray-300 font-medium">{subtitle}</p>}
@@ -44,13 +44,13 @@ export const Sidebar: React.FC<{ activeCategory: string }> = ({ activeCategory }
     'Investors': [
       { path: '/investors', label: 'Stock Information' },
       { path: '/investors/presentations', label: 'Corporate Presentation' },
+      { path: '/investors/fact-sheet', label: 'Fact Sheet' },
       { path: '/investors/financials', label: 'Financial Statements' },
       { path: '/investors/notice-access', label: 'Notice and Access' },
       { path: '/investors/cautionary', label: 'Cautionary Notes' },
     ],
     'News': [
       { path: '/news', label: 'News Releases' },
-      { path: '/news/w2-drill-launch', label: 'W2 Drill Launch' }
     ],
     'Contact': [
       { path: '/contact', label: 'Contact Us' },
@@ -61,7 +61,7 @@ export const Sidebar: React.FC<{ activeCategory: string }> = ({ activeCategory }
   const currentLinks = navGroups[activeCategory] || [];
 
   return (
-    <div className="bg-gray-50 p-8 rounded border border-gray-100 shadow-sm sticky top-32">
+    <div className="bg-gray-50 p-6 md:p-8 rounded border border-gray-100 shadow-sm sticky top-20 md:top-32">
       <h3 className="text-lg font-extrabold text-gray-800 uppercase tracking-widest border-b-2 border-brand-orange pb-2 mb-6 inline-block">
         {activeCategory}
       </h3>

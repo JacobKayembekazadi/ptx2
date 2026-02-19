@@ -12,10 +12,10 @@ import {
 
 export const AboutUs: React.FC = () => {
   const stats = [
-    { icon: DollarSign, value: '~$6M', label: 'Cash Position', color: 'from-green-500 to-emerald-600' },
-    { icon: TrendingUp, value: '~$20M', label: 'Market Cap', color: 'from-brand-orange to-orange-600' },
-    { icon: Shield, value: 'Zero', label: 'Debt', color: 'from-blue-500 to-indigo-600' },
-    { icon: Globe, value: '100%', label: 'Canadian Owned', color: 'from-red-500 to-rose-600' },
+    { icon: Shield, value: 'Zero', label: 'Long-Term Debt (as of Oct 2025)', color: 'from-blue-500 to-indigo-600' },
+    { icon: Globe, value: 'Ontario', label: 'Tier-1 Jurisdiction', color: 'from-red-500 to-rose-600' },
+    { icon: TrendingUp, value: '4', label: 'Strategic Projects', color: 'from-brand-orange to-orange-600' },
+    { icon: DollarSign, value: '171.2M', label: 'Shares Outstanding', color: 'from-green-500 to-emerald-600' },
   ];
 
   const pillars = [
@@ -44,7 +44,7 @@ export const AboutUs: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen">
       {/* Hero */}
-      <div className="relative h-[70vh] min-h-[550px] w-full flex items-end pb-20 overflow-hidden">
+      <div className="relative h-[70vh] min-h-[350px] md:min-h-[550px] w-full flex items-end pb-20 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
           style={{ backgroundImage: "url('https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2024/03/08103835/IMG_0219-scaled.jpg')" }}
@@ -60,7 +60,7 @@ export const AboutUs: React.FC = () => {
                 <Building2 size={12} className="inline mr-2 -mt-0.5" />
                 About PTX Metals
               </span>
-              <span className="text-gray-400 text-[10px] font-black uppercase tracking-[0.2em]">CSE: PTM | FSE: 9PX | OTC: PTNXF</span>
+              <span className="text-gray-400 text-[10px] font-black uppercase tracking-[0.2em]">TSXV: PTX | FRA: 9PX | OTCQB: PANXF</span>
             </div>
             <div className="border-l-4 border-brand-orange pl-8">
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.95] mb-6">
@@ -68,7 +68,7 @@ export const AboutUs: React.FC = () => {
                 <span className="text-brand-orange">The Right Way</span>
               </h1>
               <p className="text-xl text-gray-300 max-w-2xl leading-relaxed font-light">
-                100% Canadian-owned and operated. Advancing strategically important mineral projects in Northern Ontario through disciplined exploration and genuine partnership.
+                A Canadian mineral exploration company advancing strategically important projects in Northern Ontario through disciplined exploration and genuine partnership.
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export const AboutUs: React.FC = () => {
               </h2>
               <div className="space-y-5 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  PTX is a 100% Canadian-owned and operated mineral exploration company advancing strategically important projects in Northern Ontario. We focus on disciplined exploration, regulatory compliance, and long-term value-creation.
+                  PTX is a Canadian mineral exploration company advancing strategically important projects in Northern Ontario. We focus on disciplined exploration, regulatory compliance, and long-term value-creation.
                 </p>
                 <p>
                   Our work is grounded in technical rigour, respect for process, and sustained engagement with Indigenous communities. Led by an experienced management team with deep understanding of Northern Ontario exploration and permitting.
@@ -180,7 +180,7 @@ export const AboutUs: React.FC = () => {
 
       {/* CTA Banner */}
       <div className="container mx-auto px-6 py-24">
-        <div className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl overflow-hidden p-16 text-center">
+        <div className="relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl overflow-hidden p-6 md:p-16 text-center">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(rgba(229,100,23,0.08) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
           <div className="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 rounded-full blur-[120px]" />
           <div className="relative z-10">
@@ -485,7 +485,7 @@ export const Advisors: React.FC = () => {
     {
       name: "Ike Osmani, P.Geo.",
       title: "Technical Advisor",
-      bio: "35 years of field-based mineral exploration and NI 43-101 technical reporting. Discovered Ti-V mineralization while exploring Lansdowne House property (now W2) in 2001. Developed ~1M oz gold resource at Coldstream Project."
+      bio: "35 years of field-based mineral exploration and NI 43-101 technical reporting. Discovered Ti-V mineralization while exploring the W2 property in 2001. Developed ~1M oz gold resource at Coldstream Project."
     },
     {
       name: "Dave Bell",

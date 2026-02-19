@@ -10,11 +10,11 @@ const Footer: React.FC = () => {
           {/* Logo and Links */}
           <div className="w-full lg:w-1/2">
             <Link to="/" className="mb-8 block">
-              <svg width="300" height="70" viewBox="0 0 600 136" className="filter invert brightness-0">
+              <svg viewBox="0 0 600 136" className="w-48 sm:w-64 md:w-[300px] h-auto filter invert brightness-0">
                 <image x="6" y="7" width="591" height="124" href="https://wp-platinex-2024.s3.ca-central-1.amazonaws.com/media/2024/04/07152334/ptx-metals.png" />
               </svg>
             </Link>
-            <nav className="flex flex-wrap gap-x-8 gap-y-4">
+            <nav className="flex flex-wrap gap-x-4 sm:gap-x-6 md:gap-x-8 gap-y-2 sm:gap-y-4">
               {[
                 { name: 'Home', path: '/' },
                 { name: 'Corporate', path: '/about-us' },
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Contact Details */}
-          <div className="w-full lg:w-1/2 flex flex-col md:flex-row gap-8 lg:justify-end">
+          <div className="w-full lg:w-1/2 flex flex-col md:flex-row gap-6 md:gap-8 lg:justify-end">
             <div className="text-sm leading-relaxed text-gray-400">
               <h4 className="text-white font-bold uppercase mb-2">Office</h4>
               The Exchange Tower<br />
@@ -51,7 +51,17 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        {/* Sitewide Disclaimers */}
+        <div className="mt-8 md:mt-12 border-b border-white/10 pb-8 space-y-4">
+          <p className="text-[10px] text-gray-500 leading-relaxed">
+            <strong className="text-gray-400">Forward-Looking Statements:</strong> This website contains forward-looking statements within the meaning of applicable Canadian securities laws. Forward-looking statements involve known and unknown risks, uncertainties, and other factors that may cause actual results, performance, or achievements to be materially different from those expressed or implied. PTX Metals undertakes no obligation to update forward-looking statements except as required by law. Investors are cautioned not to place undue reliance on forward-looking statements.
+          </p>
+          <p className="text-[10px] text-gray-500 leading-relaxed">
+            <strong className="text-gray-400">Cautionary Note on Exploration Targets:</strong> Where referenced, the Exploration Target for the W2 Property is conceptual in nature. There has been insufficient exploration to define a mineral resource, and it is uncertain if further exploration will result in the target being delineated as a mineral resource. All technical information has been reviewed and approved by a Qualified Person as defined by NI 43-101. For complete disclosure, see the <Link to="/investors/cautionary" className="text-brand-orange hover:text-white transition-colors">Cautionary Notes</Link> page and reports filed on <a href="https://www.sedarplus.ca" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:text-white transition-colors">SEDAR+</a>.
+          </p>
+        </div>
+
+        <div className="mt-6 md:mt-8 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
           {/* Copyright */}
           <div className="text-xs text-gray-500">
             &copy; 2026 Copyright PTX Metals Inc.
