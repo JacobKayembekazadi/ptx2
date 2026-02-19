@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
+import ChatBot from './components/ChatBot';
 
 // Pages
 // Pages
@@ -76,7 +76,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
-
+        <ChatBot />
       </div>
     </Router>
   );
