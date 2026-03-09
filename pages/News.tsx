@@ -1,10 +1,33 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Download, ChevronRight, Search, ArrowLeft, Share2 } from 'lucide-react';
-import { newsData } from '../data/newsData';
+import { newsData, NewsItem } from '../data/newsData';
 
-const NewsSidebar: React.FC = () => {
-  const years = [...new Set(newsData.map(n => n.year))].sort((a, b) => b.localeCompare(a));
+function useAllNews(): { allNews: NewsItem[]; loading: boolean } {
+  const [rssNews, setRssNews] = useState<NewsItem[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/news')
+      .then(res => res.ok ? res.json() : Promise.reject(res.status))
+      .then((items: NewsItem[]) => {
+        setRssNews(items);
+      })
+      .catch(() => {})
+      .finally(() => setLoading(false));
+  }, []);
+
+  const allNews = useMemo(() => {
+    const staticTitles = new Set(newsData.map(n => n.title.toLowerCase()));
+    const fresh = rssNews.filter(r => !staticTitles.has(r.title.toLowerCase()));
+    return [...fresh, ...newsData];
+  }, [rssNews]);
+
+  return { allNews, loading };
+}
+
+const NewsSidebar: React.FC<{ allNews: NewsItem[] }> = ({ allNews }) => {
+  const years = [...new Set(allNews.map((n: NewsItem) => n.year))].sort((a: string, b: string) => b.localeCompare(a));
   return (
     <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-lg sticky top-32">
       <h3 className="text-lg font-extrabold text-gray-900 uppercase tracking-widest border-b-2 border-brand-orange pb-2 mb-6 inline-block">
@@ -33,7 +56,8 @@ const NewsSidebar: React.FC = () => {
 
 export const NewsArticle: React.FC = () => {
   const { id } = useParams();
-  const article = newsData.find(item => item.id === id);
+  const { allNews } = useAllNews();
+  const article = allNews.find(item => item.id === id);
 
   if (!article) {
     return (
@@ -49,7 +73,7 @@ export const NewsArticle: React.FC = () => {
   }
 
   // Find related articles (same category, excluding current)
-  const related = newsData
+  const related = allNews
     .filter(n => n.category === article.category && n.id !== article.id)
     .slice(0, 3);
 
@@ -140,22 +164,23 @@ export const NewsArticle: React.FC = () => {
 // ── News Listing Page ────────────────────────────────────────────────────────
 
 const News: React.FC = () => {
+  const { allNews, loading } = useAllNews();
   const [filterYear, setFilterYear] = useState<string>('All');
   const [filterCategory, setFilterCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
 
-  const years = [...new Set(newsData.map(n => n.year))].sort((a, b) => b.localeCompare(a));
+  const years = [...new Set(allNews.map((n: NewsItem) => n.year))].sort((a: string, b: string) => b.localeCompare(a));
 
   const filteredNews = useMemo(() => {
-    return newsData.filter(item => {
+    return allNews.filter(item => {
       const matchesYear = filterYear === 'All' || item.year === filterYear;
       const matchesCategory = filterCategory === 'All' || item.category === filterCategory;
       const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesYear && matchesCategory && matchesSearch;
     });
-  }, [filterYear, filterCategory, searchQuery]);
+  }, [allNews, filterYear, filterCategory, searchQuery]);
 
-  const featuredArticle = newsData[0];
+  const featuredArticle = allNews[0];
 
   return (
     <div className="bg-gray-50 min-h-screen">
@@ -191,6 +216,7 @@ const News: React.FC = () => {
                   Latest Release
                 </span>
                 <span className="text-gray-400 font-bold uppercase text-xs tracking-widest">{featuredArticle.date}</span>
+                {loading && <span className="text-gray-500 text-xs animate-pulse">Checking for updates...</span>}
               </div>
 
               <Link to={`/news/${featuredArticle.id}`} className="group block">
@@ -216,7 +242,7 @@ const News: React.FC = () => {
             <div className="hidden lg:block">
               <h3 className="text-xs font-black uppercase tracking-[0.3em] text-brand-orange mb-6">More Headlines</h3>
               <div className="space-y-4">
-                {newsData.slice(1, 4).map((item, idx) => (
+                {allNews.slice(1, 4).map((item, idx) => (
                   <Link
                     key={idx}
                     to={`/news/${item.id}`}
@@ -318,7 +344,7 @@ const News: React.FC = () => {
           </div>
         </div>
         <div className="lg:w-1/4">
-          <NewsSidebar />
+          <NewsSidebar allNews={allNews} />
           <div className="mt-12 bg-gradient-to-br from-brand-orange to-red-600 p-8 rounded-2xl text-white shadow-xl relative overflow-hidden">
             <div className="absolute -bottom-10 -right-10 opacity-20 transform rotate-12">
               <Download size={150} />
