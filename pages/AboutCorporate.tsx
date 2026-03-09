@@ -244,9 +244,9 @@ export const Management: React.FC = () => {
       bio: "Highly accomplished geologist with significant expertise in corporate development, including financing a copper project with BHP joint venture and Fiore Group. Built expertise across three continents with primary focus on precious and base metals."
     },
     {
-      name: "Kyle Pedersen, P.Geo.",
-      title: "Exploration Geologist",
-      bio: "Over 15 years of experience in mineral exploration and 4 years in geotechnical and environmental consulting. Brings strong focus on management and execution of exploration programs mainly in Ontario."
+      name: "Shuda Zhou, MSc., P.Geo.",
+      title: "Consulting Geologist (QP)",
+      bio: "15 years of global exploration experience in Canada, South America, Africa and Asia. Qualified Person overseeing data review, geological model and exploration target at W2. Focus on Cu-Ni-PGE and Gold."
     }
   ];
 
@@ -468,9 +468,9 @@ export const Board: React.FC = () => {
 export const Advisors: React.FC = () => {
   const w2Committee: TeamMemberProps[] = [
     {
-      name: "Shuda Zhou, MSc., P.Geo.",
-      title: "Consulting Geologist (QP)",
-      bio: "10 years of global exploration experience in Canada, South America, Africa and Asia. Qualified Person overseeing data review, geological model and exploration target at W2. Focus on Cu-Ni-PGE and Gold."
+      name: "Kyle Pedersen, P.Geo.",
+      title: "Exploration Geologist",
+      bio: "Over 15 years of experience in mineral exploration and 4 years in geotechnical and environmental consulting. Brings strong focus on management and execution of exploration programs mainly in Ontario."
     },
     {
       name: "Wes Roberts, P.Eng., MBA",

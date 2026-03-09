@@ -184,9 +184,8 @@ const ESGPolicy: React.FC = () => {
                                 </div>
                                 <h3 className="text-2xl font-black uppercase tracking-tight mb-3 text-black">{pillar.title}</h3>
                                 <p className="text-gray-500 leading-relaxed text-sm">{pillar.description}</p>
-                                <div className="mt-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400 group-hover:text-brand-orange transition-colors">
+                                <div className="mt-6 flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400">
                                     <span>{pillar.commitments.length} Commitments</span>
-                                    <ArrowRight size={12} />
                                 </div>
                             </div>
                         ))}

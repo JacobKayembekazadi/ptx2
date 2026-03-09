@@ -291,7 +291,6 @@ export const ProjectW2: React.FC = () => {
               <Shield size={20} /> Community
             </h3>
             <div className="space-y-4 text-sm">
-              <div><span className="text-[9px] font-bold uppercase tracking-widest text-gray-500">First Nations</span><p className="font-bold text-gray-200">Cooperation Agreement with Webequie FN (Dec 2025)</p></div>
               <div><span className="text-[9px] font-bold uppercase tracking-widest text-gray-500">Status</span><p className="font-bold text-gray-200">Currently Drilling — 5,000m Program</p></div>
             </div>
           </div>
@@ -468,7 +467,7 @@ export const ProjectW2: React.FC = () => {
 
         {/* QP & Disclaimers */}
         <div className="bg-gray-100 p-8 rounded-2xl text-xs text-gray-500 leading-relaxed space-y-3">
-          <p><strong className="text-gray-700">Qualified Person:</strong> The technical information on this page has been reviewed and approved by R. Tim Trusler, P.Geo., a Qualified Person as defined by National Instrument 43-101.</p>
+          <p><strong className="text-gray-700">Qualified Person:</strong> The technical information on this page has been reviewed and approved by Shuda Zhou, MSc., P.Geo., a Qualified Person as defined by National Instrument 43-101.</p>
           <p><strong className="text-gray-700">Exploration Target Cautionary Note:</strong> The Exploration Target of 60-135Mt at 0.5-0.78% CuEq is conceptual in nature. There has been insufficient exploration to define a mineral resource and it is uncertain if further exploration will result in the target being delineated as a mineral resource. CuEq calculations use metal prices and recoveries as outlined in the NI 43-101 Technical Report dated September 2024, available on <a href="https://www.sedarplus.ca" target="_blank" rel="noopener noreferrer" className="text-brand-orange hover:underline">SEDAR+</a>.</p>
           <p><strong className="text-gray-700">Historical Results:</strong> Historical drilling results referenced herein are sourced from assessment files and prior operator reports. PTX has not independently verified these results and they should not be relied upon. A Qualified Person has not done sufficient work to classify these as current mineral resources.</p>
         </div>

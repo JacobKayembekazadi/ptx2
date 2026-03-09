@@ -6,10 +6,10 @@ import { TrendingUp, FileText, Download, PieChart, Info, ShieldAlert, UserCheck,
 
 const Investors: React.FC = () => {
     const capitalData = [
-        { label: "Basic Shares Outstanding", value: "171,150,598", highlight: false },
+        { label: "Basic Shares Outstanding", value: "174,500,000", highlight: false },
         { label: "Options (Avg Strike $0.18)", value: "8,262,500", highlight: false },
         { label: "Warrants", value: "39,298,000", highlight: false },
-        { label: "Fully Diluted", value: "218,711,098", highlight: false },
+        { label: "Fully Diluted", value: "222,060,500", highlight: false },
     ];
 
     const shareholderData = [
@@ -118,7 +118,6 @@ const Investors: React.FC = () => {
                                                 <span className={`text-2xl font-black ${ticker.primary ? 'text-brand-orange' : 'text-white'}`}>{ticker.symbol}</span>
                                             </div>
                                         </div>
-                                        <ChevronRight size={20} className={`${ticker.primary ? 'text-brand-orange' : 'text-gray-500'} group-hover:translate-x-1 transition-transform`} />
                                     </div>
                                 ))}
                             </div>
@@ -135,8 +134,8 @@ const Investors: React.FC = () => {
                 <div className="container mx-auto px-6">
                     <div className="flex items-center justify-between py-4 overflow-x-auto gap-8">
                         {[
-                            { label: "Shares Out", value: "171.2M", highlight: false },
-                            { label: "Fully Diluted", value: "218.7M", highlight: false },
+                            { label: "Shares Out", value: "174.5M", highlight: false },
+                            { label: "Fully Diluted", value: "222.1M", highlight: false },
                         ].map((item, idx) => (
                             <div key={idx} className="flex items-center gap-3 whitespace-nowrap">
                                 <span className="text-[10px] font-bold uppercase tracking-widest text-gray-400">{item.label}</span>
@@ -898,8 +897,8 @@ export const CautionaryNotes: React.FC = () => (
                             Technical information presented on this website has been prepared in accordance with the Canadian regulatory requirements set out in National Instrument 43-101.
                         </p>
                         <div className="bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/10">
-                            <p className="text-xl font-black text-brand-orange mb-1">James R. Trusler, P.Eng</p>
-                            <p className="text-gray-400 text-sm uppercase tracking-widest">Chairman & Qualified Person (NI 43-101)</p>
+                            <p className="text-xl font-black text-brand-orange mb-1">Shuda Zhou, MSc., P.Geo.</p>
+                            <p className="text-gray-400 text-sm uppercase tracking-widest">Consulting Geologist & Qualified Person (NI 43-101)</p>
                         </div>
                     </div>
                 </section>

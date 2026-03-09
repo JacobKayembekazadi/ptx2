@@ -47,6 +47,8 @@ const Milestones: React.FC = () => {
             borderColor: 'border-blue-500',
             details: [
                 'Resource modeling and estimation for W2 complex',
+                'Metallurgy program advancement',
+                'Drill Shining Tree and Heenan Mallard gold projects',
                 'Paragenesis study completion',
                 'Expansion drilling based on 2025 results',
                 'Preliminary Economic Assessment (PEA) initiation',
@@ -63,7 +65,7 @@ const Milestones: React.FC = () => {
             borderColor: 'border-purple-500',
             details: [
                 'Resource definition and expansion',
-                'Feasibility studies and permitting',
+                'Economic studies and permitting',
                 'Strategic optionality evaluation',
                 'Continued exploration across portfolio',
                 'Stakeholder value maximization'

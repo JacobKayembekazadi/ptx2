@@ -140,7 +140,7 @@ const Home: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold uppercase tracking-tight text-lg group-hover:text-brand-orange transition-colors">First Nations Partnerships</h4>
-                    <p className="text-gray-500 mt-1">Formal Cooperation Agreement with Webequie First Nation (Dec 2025). 15-month consultation process with community-informed conditions. Early-Stage Exploration Committee established in 2026.</p>
+                    <p className="text-gray-500 mt-1">Working collaboratively with First Nations communities through formal cooperation agreements. 15-month consultation process with community-informed conditions. Early-Stage Exploration Committee established in 2026.</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-6 group cursor-pointer">
@@ -250,7 +250,7 @@ const Home: React.FC = () => {
                 <div className="space-y-4">
                   <p className="text-sm text-gray-400 group-hover:text-white/80 leading-relaxed font-light">{p.desc}</p>
                   <div className="flex items-center text-brand-orange group-hover:text-white font-black text-xs uppercase tracking-widest">
-                    {p.stat} <ArrowRight size={14} className="ml-2 group-hover:translate-x-2 group-hover:animate-bounce transition-transform" />
+                    {p.stat}
                   </div>
                 </div>
               </div>
@@ -428,7 +428,6 @@ const Home: React.FC = () => {
               <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter mb-4 md:mb-6 leading-none drop-shadow-2xl">W2 Copper <br /> Nickel PGE</h3>
               <p className="text-white max-w-md text-lg font-light mb-6 drop-shadow-lg">Exploration Target*: 60-135Mt @ 0.5-0.78% CuEq. The potential quantity and grade is conceptual in nature and there has been insufficient exploration to define a mineral resource.</p>
               <div className="flex items-center gap-3 mb-10">
-                <span className="glass text-[10px] font-black uppercase tracking-widest px-3 py-1.5 text-brand-orange border border-brand-orange/30 drop-shadow-lg">Webequie FN Agreement</span>
                 <span className="glass text-[10px] font-black uppercase tracking-widest px-3 py-1.5 text-white border border-white/20 drop-shadow-lg">Currently Drilling</span>
               </div>
               <Link to="/projects/w2" className="bg-brand-orange text-white px-10 py-4 font-black uppercase tracking-widest hover:bg-white hover:text-black transition-all shadow-xl inline-block">Project Specs</Link>
@@ -508,10 +507,10 @@ const Home: React.FC = () => {
               <h4 className="text-xl font-bold uppercase tracking-tight">Share Structure</h4>
               <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">As of October 2025</p>
               <div className="space-y-4 text-xs font-bold text-gray-400">
-                <div className="flex justify-between"><span>Issued</span><span className="text-white">171.2M</span></div>
+                <div className="flex justify-between"><span>Issued</span><span className="text-white">174.5M</span></div>
                 <div className="flex justify-between"><span>Warrants</span><span className="text-white">39.3M</span></div>
                 <div className="flex justify-between"><span>Options</span><span className="text-white">8.3M</span></div>
-                <div className="flex justify-between text-brand-orange pt-2 border-t border-white/5"><span>Fully Diluted</span><span>218.7M</span></div>
+                <div className="flex justify-between text-brand-orange pt-2 border-t border-white/5"><span>Fully Diluted</span><span>222.1M</span></div>
               </div>
             </div>
             <div className="glass p-6 md:p-10 lg:p-12 space-y-6 hover-lift transition-all duration-300 hover:shadow-xl group" style={{ transitionDelay: '200ms' }}>
